@@ -1,94 +1,69 @@
+# AI_TEXT-TO-IMAGE-GENERATOR-
 
-🧠 EduSketch – AI Text-to-Image Generator
+# 📚 EduSketch – AI Text-to-Image Generator
 
-🎯 Goal: Generate educational illustrations from text prompts using Stable Diffusion.
-
-
-
+**EduSketch** is a fun and simple project that turns educational text prompts into colorful pictures using AI. It is made for students and teachers to help explain school topics through visuals. This project uses Google Colab and the Stable Diffusion AI model.
 
 
 
-#✅ Step 1: Install Required Libraries
+## 🎯 What This Project Does
 
-!pip install diffusers transformers accelerate --upgrade
-!pip install safetensors
-
+- Converts topics like “solar system” or “photosynthesis” into pictures.
+- Helps students understand lessons through visual learning.
+- Runs completely on Google Colab — no setup needed.
 
 
 
 
+## 🛠️ Tools and Technologies Used
 
-#✅ Step 2: Import Required Libraries
-
-import torch
-from diffusers import StableDiffusionPipeline
-import matplotlib.pyplot as plt
-from huggingface_hub import login
-
-
-
-
-#✅ Step 3: Login to Hugging Face
-
-# Login using your Hugging Face token
-login("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")  # Replace with your token
+- **Python**
+- **Google Colab** (with GPU)
+- **Hugging Face Diffusers Library**
+- **Stable Diffusion v1.5 AI model**
+- **Matplotlib** (for showing images)
 
 
 
 
-#✅ Step 4: Load the Stable Diffusion Model
+## 🔑 How to Use EduSketch
 
-pipe = StableDiffusionPipeline.from_pretrained(
-    "runwayml/stable-diffusion-v1-5",
-    torch_dtype=torch.float16,         # Use float32 if using CPU
-    use_safetensors=True
-).to("cuda")  # Replace with "cpu" if GPU not available
-
-
-
-
-#✅ Step 5: Educational Prompt Input
-
-edu_prompt = input("Enter an educational topic (e.g., Water Cycle, Photosynthesis): ")
+1. Open the Colab notebook [here](https://colab.research.google.com/drive/1nkRhoqAO7jE7bzT2eDdfO5QEM5HzSLU8?usp=sharing).
+2. Click `Runtime > Change runtime type > GPU`.
+3. Run the code cells step by step.
+4. Enter an educational topic (like “water cycle”).
+5. The AI will show a picture of your topic.
 
 
 
 
 
+## 🖼️ Examples of Prompts You Can Try
 
-#✅ Step 6: Enhance the Prompt
+- The water cycle  
+- Solar system with all planets  
+- Photosynthesis in plants  
+- Life cycle of a butterfly  
+- Rainwater harvesting  
+- A child reading under a tree  
 
-enhanced_prompt = f"An educational illustration of: {edu_prompt}, highly detailed, colorful, child-friendly style, informative and clear"
+
+
+## ⚠️ Common Challenges and Their Solutions
+
+| Challenge                  | Solution                            |
+|---------------------------|-------------------------------------|
+| Model runs slowly         | Use GPU in Google Colab             |
+| Prompt gives poor result  | Add more descriptive keywords       |
+| Token safety              | Use `login()` to hide your token    |
+| Images not clear          | Add titles using `matplotlib`       
 
 
 
 
 
 
-#✅ Step 7: Generate the Image
+## 🙋‍♂️ Created By
 
-generated_image = pipe(enhanced_prompt).images[0]
-
-
-
-
-
-
-#✅ Step 8: Display the Image
-
-plt.imshow(generated_image)
-plt.axis('off')
-plt.title(f"EduSketch Output: {edu_prompt}")
-plt.show()
-
-
- 
-(text) 
-✅ Step 9: Sample Prompts to Try
-
-- The water cycle
-- Solar system with all planets
-- Photosynthesis in plants
-- The life cycle of a butterfly
-- Rainwater harvesting
-- A child reading under a tree# AI-TEXT-TO-IMAGE-GENERATOR-
+** Yashraj **  
+With Hugging Face & Google Colab
